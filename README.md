@@ -17,3 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 Attribution
 1. <a href="https://www.flaticon.com/free-icons/sushi" title="sushi icons">Sushi icons created by amonrat rungreangfangsai - Flaticon</a>
+2. <a href="https://www.flaticon.com/free-icons/sushi" title="sushi icons">Sushi icons created by Freepik - Flaticon</a>
