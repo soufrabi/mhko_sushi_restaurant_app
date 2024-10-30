@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mk_sushi_restaurant_app/core/widgets/custom_button.dart';
+import 'package:mk_sushi_restaurant_app/features/details/presentation/pages/food_details_page.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -92,56 +93,66 @@ class MenuPage extends StatelessWidget {
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Container(
-                        width: 180,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF3F3F3),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        padding: const EdgeInsets.all(10),
-                        margin: const EdgeInsets.only(right: 10.0),
-                        child: Column(
-                          // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/tuna.png",
-                              height: 140,
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const FoodDetailsPage(),
                             ),
-                            const Row(
-                              children: [
-                                Text(
-                                  "Tuna Sushi",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Spacer(),
-                              ],
-                            ),
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "\$21.0",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
+                          );
+                        },
+                        child: Container(
+                          width: 180,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF3F3F3),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.all(10),
+                          margin: const EdgeInsets.only(right: 10.0),
+                          child: Column(
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                "assets/tuna.png",
+                                height: 140,
+                              ),
+                              const Row(
+                                children: [
+                                  Text(
+                                    "Tuna Sushi",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    Text(
-                                      "4.3",
-                                      style: TextStyle(color: Colors.grey),
+                                  ),
+                                  Spacer(),
+                                ],
+                              ),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "\$21.0",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.yellow,
+                                      ),
+                                      Text(
+                                        "4.3",
+                                        style: TextStyle(color: Colors.grey),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     }),

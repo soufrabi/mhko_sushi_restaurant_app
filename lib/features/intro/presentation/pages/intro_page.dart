@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mk_sushi_restaurant_app/core/widgets/custom_button.dart';
-import 'package:mk_sushi_restaurant_app/features/menu/presentation/pages/menu_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -51,11 +50,7 @@ class IntroPage extends StatelessWidget {
               CustomButton(
                 text: "Get Started",
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => MenuPage(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, "/menu");
                 },
               ),
             ],
