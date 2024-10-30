@@ -6,8 +6,8 @@ class CartPage extends StatelessWidget {
 
   Widget buildItem(String name, String price) {
     return Container(
-        padding: EdgeInsets.all(8),
-        margin: EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
           color: Colors.white.withOpacity(0.15),
@@ -40,19 +40,19 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF7D352E),
+      backgroundColor: const Color(0xFF7D352E),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.white,
             )),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "My Cart",
           style: TextStyle(
             color: Colors.white,
@@ -72,12 +72,12 @@ class CartPage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
+          const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 20.0,
               vertical: 4,
             ),
-            child: const CustomButton(
+            child: CustomButton(
               text: "Pay Now",
             ),
           ),

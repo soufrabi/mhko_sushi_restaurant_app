@@ -71,9 +71,34 @@ class FoodDetailsPage extends StatelessWidget {
             CustomButton(
               text: "Add to Card",
               onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CartPage(),
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    backgroundColor: const Color(0xFF7D342F),
+                    content: const Text(
+                      "Successfully added to cart",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    actions: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const CartPage(),
+                            ),
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.done,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },
